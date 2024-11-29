@@ -1,0 +1,44 @@
+
+vrin@vrin:~$ sudo apt install php8.1-common php8.1-fpm php8.1 php8.1-cli php8.1-imap php8.1-redis php8.1-snmp php8.1-xml php8.1-zip php8.1-mbstring php8.1-curl
+vrin@vrin:~$ sudo apt install php libapache2-mod-php php-mbstring php-xmlrpc php-soap php-gd php-xml php-cli php-zip php-bcmath php-tokenizer php-json php-pear
+
+vrin@vrin:~$ sudo apt install curl unzip -y
+vrin@vrin:~$ curl -sS https://getcomposer.org/installer | php8.1
+vrin@vrin:~$ sudo mv composer.phar /usr/local/bin/composer
+vrin@vrin:~$ sudo chmod +x /usr/local/bin/composer
+vrin@vrin:~$ composer
+
+vrin@vrin:~$ sudo apt install nginx -y
+vrin@vrin:~$ sudo systemctl status nginx
+vrin@vrin:~$ sudo systemctl start nginx
+vrin@vrin:~$ apt install php-mysql
+vrin@vrin:~$ cd /var/www/html
+
+vrin@vrin:/var/www/html$ sudo composer global require laravel/installer
+vrin@vrin:/var/www/html$ sudo git clone https://github.com/JosueChoqueG/bolsa_de_trabajo.git bolsa
+
+vrin@vrin:/var/www/html$ cd bolsa
+vrin@vrin:/var/www/html/cmsvrin$ sudo composer install/update
+vrin@vrin:/var/www/html/cmsvrin$ sudo composer.jason   8.1php
+vrin@vrin:/var/www/html/cmsvrin$ sudo cp .env.example .env
+vrin@vrin:/var/www/html/cmsvrin$ ls -la
+vrin@vrin:/var/www/html/cmsvrin$ sudo composer install
+vrin@vrin:/var/www/html/cmsvrin$ sudo php artisan key:generate --ansi
+
+vrin@vrin:/var/www/html$ sudo chmod -R 755 /var/www/html/bolsa
+vrin@vrin:/var/www/html$ sudo chown -R www-data:www-data /var/www/html/bolsa
+
+vrin@vrin:/var/www/html/cmsvrin$ sudo nano /etc/nginx/sites-available/bolsa.conf
+vrin@vrin:/var/www/html/cmsvrin$ sudo ln -s /etc/nginx/sites-available/bolsa.conf /etc/nginx/sites-enabled/
+vrin@vrin:/var/www/html/cmsvrin$ sudo rm /etc/nginx/sites-enabled/default
+vrin@vrin:/var/www/html/cmsvrin$ sudo nginx -t
+vrin@vrin:/var/www/html/cmsvrin$ sudo systemctl reload nginx
+vrin@vrin:/var/www/html/cmsvrin$
+
+
+sudo apt install mariadb-server
+sudo mysql_secure_installation
+sudo mariadb
+sudo systemctl status mariadb
+
+
